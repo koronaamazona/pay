@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оплата</title>
+<style>
+body {
+  background:#0f0f0f;
+  color:#fff;
+  font-family:Arial, sans-serif;
+  margin:0;
+  padding:20px;
+}
+.card {
+  background:#1a1a1a;
+  border-radius:12px;
+  padding:16px;
+  margin-bottom:14px;
+}
+button {
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:10px;
+  background:#2ecc71;
+  color:#000;
+  font-size:16px;
+  font-weight:bold;
+}
+.small {
+  color:#aaa;
+  font-size:14px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <b>ФОП [ПІБ повністю]</b>
+</div>
+
+<div class="card">
+  ⬇️ Скопіюйте дані для оплати ⬇️
+</div>
+
+<div class="card">
+  <div>IBAN:</div>
+  <div class="small">UAxxxxxxxxxxxxxxxxxxxx</div>
+  <button onclick="copy('UAxxxxxxxxxxxxxxxxxxxx')">Скопіювати IBAN</button>
+</div>
+
+<div class="card">
+  <div>ЄДРПОУ:</div>
+  <div class="small">xxxxxxxx</div>
+  <button onclick="copy('xxxxxxxx')">Скопіювати ЄДРПОУ</button>
+</div>
+
+<div class="card">
+  <div>Призначення платежу:</div>
+  <div class="small">Оплата за товари</div>
+  <button onclick="copy('Оплата за товари')">Скопіювати призначення</button>
+</div>
+
+<div class="card">
+  📦 Після оплати надішліть скріншот та заповніть:
+  <button onclick="copy('ПІБ:\nНаселений пункт:\nВідділення НП / Укрпошти:\nТелефон:')">
+    Скопіювати шаблон
+  </button>
+</div>
+
+<div class="card">
+  📞 Звʼязок з магазином:
+  <div class="small">Telegram: @username</div>
+  <div class="small">Viber: +380...</div>
+</div>
+
+<div class="card">
+  🚚 Доставка: Нова пошта, Укрпошта<br>
+  💳 Оплата: 100% передоплата
+</div>
+
+<script>
+function copy(text) {
+  navigator.clipboard.writeText(text);
+  alert("Скопійовано 👍");
+}
+</script>
+
+</body>
+</html>
