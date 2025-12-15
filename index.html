@@ -3,88 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Оплата</title>
+<title>KORONA AMAZONA</title>
+
 <style>
+* { box-sizing: border-box; }
+
 body {
-  background:#0f0f0f;
-  color:#fff;
-  font-family:Arial, sans-serif;
-  margin:0;
-  padding:20px;
+  margin: 0;
+  background: #121212;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.header p {
+  margin: 6px 0 0;
+  color: #b0b0b0;
+  font-size: 14px;
+}
+
 .card {
-  background:#1a1a1a;
-  border-radius:12px;
-  padding:16px;
-  margin-bottom:14px;
+  background: #1c1c1c;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
 }
-button {
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  border:none;
-  border-radius:10px;
-  background:#2ecc71;
-  color:#000;
-  font-size:16px;
-  font-weight:bold;
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 10px;
 }
-.small {
-  color:#aaa;
-  font-size:14px;
+
+.subtext {
+  color: #b0b0b0;
+  font-size: 14px;
+}
+
+.value {
+  font-size: 15px;
+  margin-top: 6px;
+  word-break: break-all;
+}
+
+.copy-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #2ecc71;
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.copy-btn:active {
+  transform: scale(0.98);
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1c1c1c;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.contact span {
+  font-size: 15px;
+}
+
+.footer-note {
+  background: #1c1c1c;
+  border-left: 4px solid #e74c3c;
+  padding: 14px;
+  border-radius: 10px;
+  color: #b0b0b0;
+  font-size: 14px;
 }
 </style>
 </head>
+
 <body>
+<div class="container">
 
-<div class="card">
-  <b>ФОП Кузнецов Віктор Володимирович</b>
-</div>
+  <!-- HEADER -->
+  <div class="header">
+    <h1>KORONA AMAZONA</h1>
+    <p>TikTok-магазин</p>
+  </div>
 
-<div class="card">
-  ⬇️ Скопіюйте дані для оплати ⬇️
-</div>
+  <!-- PAYMENT -->
+  <div class="card">
+    <div class="card-title">💎 Реквізити для оплати:</div>
+    <div class="value">ФОП Кузнецов Віктор Володимирович</div>
+    <div class="subtext" style="margin-top:8px;">⬇️ Скопіюйте для оплати ⬇️</div>
+  </div>
 
-<div class="card">
-  <div>IBAN:</div>
-  <div class="small">UA903052990000026006000811337</div>
-  <button onclick="copy('UA903052990000026006000811337')">Скопіювати IBAN</button>
-</div>
+  <div class="card">
+    <div class="subtext">💳 IBAN Universal Bank</div>
+    <div class="value">UA903052990000026006000811337</div>
+    <button class="copy-btn" onclick="copyText('UA903052990000026006000811337')">
+      Скопіювати IBAN
+    </button>
+  </div>
 
-<div class="card">
-  <div>ЄДРПОУ:</div>
-  <div class="small">3190013393</div>
-  <button onclick="copy('3190013393')">Скопіювати ЄДРПОУ</button>
-</div>
+  <div class="card">
+    <div class="subtext">🏢 ЄДРПОУ</div>
+    <div class="value">3190013393</div>
+    <button class="copy-btn" onclick="copyText('3190013393')">
+      Скопіювати ЄДРПОУ
+    </button>
+  </div>
 
-<div class="card">
-  <div>Призначення платежу:</div>
-  <div class="small">Оплата за товар</div>
-  <button onclick="copy('Оплата за товари')">Скопіювати призначення</button>
-</div>
+  <div class="card">
+    <div class="subtext">📝 Призначення платежу</div>
+    <div class="value">Оплата за товар</div>
+    <button class="copy-btn" onclick="copyText('Оплата за товар')">
+      Скопіювати призначення
+    </button>
+  </div>
 
-<div class="card">
-  📦 Після оплати надішліть скріншот та заповніть:
-  <button onclick="copy('ПІБ:\nНаселений пункт:\nВідділення НП / Укрпошти:\nТелефон:')">
-    Скопіювати шаблон
-  </button>
-</div>
+  <!-- AFTER PAYMENT -->
+  <div class="card">
+    <div class="card-title">📦 Після оплати:</div>
+    <div class="subtext">
+      Надішліть менеджеру скріншот квитанції про успішну оплату та заповніть шаблон:
+    </div>
 
-<div class="card">
-  📞 Звʼязок з магазином:
-  <div class="small">Telegram: @koronaamazonamanager</div>
-  <div class="small">Viber: +380970353280</div>
-</div>
+    <button class="copy-btn" onclick="copyText(
+'ПІБ:\nНаселений пункт:\nВідділення НП:\nТелефон отримувача:'
+    )">
+      Скопіювати текст шаблону
+    </button>
+  </div>
 
-<div class="card">
-  🚚 Доставка: Нова пошта, Укрпошта<br>
-  💳 Оплата: 100% передоплата або передоплата 200 гривень
+  <!-- CONTACT -->
+  <div class="card">
+    <div class="card-title">📞 Звʼязок з магазином:</div>
+
+    <div class="contact">
+      <span>Telegram: @koronaamazonamanager</span>
+    </div>
+
+    <div class="contact">
+      <span>Viber: +380970353280</span>
+    </div>
+
+    <div class="contact">
+      <span>Вітрина: KORONA AMAZONA</span>
+    </div>
+  </div>
+
+  <!-- TIKTOK NOTE -->
+  <div class="footer-note">
+    Для користувачів TikTok:  
+    якщо кнопки «Відкрити» або «Скопіювати» не працюють —  
+    натисніть три крапки вгорі праворуч → «Відкрити в браузері».
+  </div>
+
 </div>
 
 <script>
-function copy(text) {
+function copyText(text) {
   navigator.clipboard.writeText(text);
-  alert("Скопійовано 👍");
+  alert('Скопійовано 👍');
 }
 </script>
 
