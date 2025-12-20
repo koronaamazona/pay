@@ -180,6 +180,57 @@ body {
   margin-top: -6px;
   margin-bottom: 12px;
 }
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  margin: 12px 0;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.btn-text {
+  text-align: left;
+}
+
+.btn-title {
+  font-size: 16px;
+}
+
+.btn-sub {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* VIBER */
+.viber-btn {
+  background: #7360f2;
+  color: #ffffff;
+}
+
+/* АКТИВНИЙ СТАН */
+.btn:active {
+  background: #4db8ff;
+  transform: scale(0.97);
+}
+
+/* СТАН "СКОПІЙОВАНО" */
+.btn.copied {
+  background: #2ecc71 !important;
+}
 
 </style>
 </head>
@@ -256,13 +307,15 @@ body {
 
   <!-- VIBER COPY -->
 <button class="btn viber-btn"
-        onclick="copyText('+380970353280')">
-  <img src="https://cdn-icons-png.flaticon.com/512/2111/2111723.png" alt="Viber">
-  СКОПІЮВАТИ VIBER
+        onclick="copyWithFeedback(this, '+380970353280')">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="white" d="M20.52 3.48A11.91 11.91 0 0012.04 0C5.4 0 .04 5.37 0 12c0 2.12.55 4.2 1.6 6.03L0 24l6.18-1.58A11.9 11.9 0 0012.04 24C18.66 24 24 18.63 24 12a11.91 11.91 0 00-3.48-8.52z"/>
+  </svg>
+  <div class="btn-text">
+    <div class="btn-title">СКОПІЮВАТИ VIBER</div>
+    <div class="btn-sub">+380 97 035 32 80</div>
+  </div>
 </button>
-<div class="viber-note">
-  +380970353280
-</div>
 
   <!-- TELEGRAM CHANNEL -->
   <a href="https://t.me/skryniastore"
@@ -283,9 +336,17 @@ body {
 </div>
 
 <script>
-function copyText(text) {
+function copyWithFeedback(button, text) {
   navigator.clipboard.writeText(text);
-  alert('Скопійовано 👍');
+
+  const originalHTML = button.innerHTML;
+  button.classList.add('copied');
+  button.innerHTML = 'Скопійовано ✓';
+
+  setTimeout(() => {
+    button.innerHTML = originalHTML;
+    button.classList.remove('copied');
+  }, 1500);
 }
 </script>
 
