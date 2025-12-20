@@ -231,6 +231,12 @@ body {
 .btn.copied {
   background: #2ecc71 !important;
 }
+  
+.info-btn {
+  background: #1c1c1c;
+  color: #ffffff;
+  border: 1px solid #2ecc71;
+}
 
 </style>
 </head>
@@ -251,29 +257,38 @@ body {
     <div class="subtext" style="margin-top:8px;">⬇️ Скопіюйте для оплати ⬇️</div>
   </div>
 
-  <div class="card">
-    <div class="subtext">💳 IBAN ПриватБанк</div>
-    <div class="value">UA903052990000026006000811337</div>
-    <button class="copy-btn" onclick="copyText('UA903052990000026006000811337')">
-      Скопіювати IBAN
-    </button>
+<button class="btn info-btn"
+        onclick="copyWithFeedback(this, 'UA903052990000026006000811337')">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="white" d="M3 10h18v10H3zM5 6h14v4H5z"/>
+  </svg>
+  <div class="btn-text">
+    <div class="btn-title">СКОПІЮВАТИ IBAN</div>
+    <div class="btn-sub">UA903052990000026006000811337</div>
   </div>
+</button>
 
-  <div class="card">
-    <div class="subtext">🏢 ЄДРПОУ</div>
-    <div class="value">3190013393</div>
-    <button class="copy-btn" onclick="copyText('3190013393')">
-      Скопіювати ЄДРПОУ
-    </button>
+<button class="btn info-btn"
+        onclick="copyWithFeedback(this, '3190013393')">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="white" d="M4 22V2h16v20H4zm4-2h2v-2H8v2zm0-4h2v-2H8v2zm0-4h2V10H8v2zm6 8h2v-2h-2v2zm0-4h2v-2h-2v2zm0-4h2V10h-2v2z"/>
+  </svg>
+  <div class="btn-text">
+    <div class="btn-title">СКОПІЮВАТИ ЄДРПОУ</div>
+    <div class="btn-sub">3190013393</div>
   </div>
+</button>
 
-  <div class="card">
-    <div class="subtext">📝 Призначення платежу</div>
-    <div class="value">Оплата за товар</div>
-    <button class="copy-btn" onclick="copyText('Оплата за товар')">
-      Скопіювати призначення
-    </button>
+<button class="btn info-btn"
+        onclick="copyWithFeedback(this, 'Оплата за товар')">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="white" d="M3 3h18v18H3zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h6v2H7v-2z"/>
+  </svg>
+  <div class="btn-text">
+    <div class="btn-title">СКОПІЮВАТИ ПРИЗНАЧЕННЯ</div>
+    <div class="btn-sub">Оплата за товар</div>
   </div>
+</button>
 
   <!-- AFTER PAYMENT -->
   <div class="card">
