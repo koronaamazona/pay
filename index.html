@@ -22,7 +22,7 @@
   margin: 12px 0;
   box-shadow: 0 8px 20px rgba(0, 140, 255, 0.35);
 }
-
+  
 .telegram-button:active {
   transform: scale(0.97);
 }
@@ -138,6 +138,41 @@ body {
   color: #b0b0b0;
   font-size: 14px;
 }
+  .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px;
+  margin: 12px 0;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn img {
+  width: 22px;
+  height: 22px;
+}
+
+.telegram-btn {
+  background: #0088cc;
+  color: #ffffff;
+}
+
+.viber-btn {
+  background: #7360f2;
+  color: #ffffff;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
 </style>
 </head>
 
@@ -185,7 +220,11 @@ body {
   <div class="card">
     <div class="card-title">📦 Після оплати:</div>
     <div class="subtext">
-      Надішліть менеджеру скріншот квитанції про успішну оплату та заповніть шаблон:           👤 ПІБ:          📍 Населений пункт:           📦 Відділення НП:           📱 Телефон отримувача:
+      Надішліть менеджеру скріншот квитанції про успішну оплату та заповніть шаблон:
+      👤 ПІБ:
+      📍 Населений пункт:
+      📦 Відділення НП:
+      📱 Телефон отримувача:
     </div>
 
     <button class="copy-btn" onclick="copyText(
@@ -199,15 +238,29 @@ body {
 <div class="card">
   <div class="card-title">📞 Звʼязок з магазином:</div>
 
-<a href="https://t.me/koronaamazonamanager"
-   target="_blank"
-   class="telegram-button">
-  ТЕЛЕГРАМ МЕНЕДЖЕР
-</a>
+  <!-- TELEGRAM MANAGER -->
+  <a href="https://t.me/koronaamazonamanager"
+     target="_blank"
+     class="btn telegram-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+    ТЕЛЕГРАМ МЕНЕДЖЕР
+  </a>
 
-  <div class="contact">
-    <span>Viber: +380970353280</span>
-  </div>
+  <!-- VIBER COPY -->
+  <button class="btn viber-btn"
+          onclick="copyText('+380970353280')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Viber_logo.svg" alt="Viber">
+    СКОПІЮВАТИ VIBER
+  </button>
+
+  <!-- TELEGRAM CHANNEL -->
+  <a href="https://web.telegram.org/k/#@skryniastore"
+     target="_blank"
+     class="btn telegram-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+    ТЕЛЕГРАМ КАНАЛ
+  </a>
+</div>
 
   <!-- TIKTOK NOTE -->
   <div class="footer-note">
